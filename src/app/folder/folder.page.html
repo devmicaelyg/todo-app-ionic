@@ -1,21 +1,36 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
-  </ion-toolbar>
+    <ion-title class="ion-text-center">{{titleHeader }}</ion-title>
+    <ion-toolbar>
+        <ion-toggle slot="end" class="ion-padding" color="dark"></ion-toggle>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-searchbar placeholder="Filter Tasks"></ion-searchbar>
+        </ion-toolbar>
+    </ion-header>
 
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <div class="ion-text-center">
+        <ion-item>
+            <ion-label position="stacked">Insira a tarefa:</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+
+        <ion-button class="sendTask ion-padding" color="dark" expand="block" fill="outline">
+            <strong>Enviar tarefa</strong>
+        </ion-button>
+    </div>
+
+    <div class="ion-margin">
+
+        <ion-list>
+            <ion-item *ngFor="let item of listToDo">
+                <ion-label>{{item.description}}</ion-label>
+                <ion-checkbox slot="end" [(ngModel)]="listToDo.isChecked"></ion-checkbox>
+            </ion-item>
+        </ion-list>
+    </div>
+
 </ion-content>
