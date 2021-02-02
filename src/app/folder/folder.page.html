@@ -1,9 +1,21 @@
-<ion-header [translucent]="true">
+<ion-toolbar>
+    <ion-button (click)="backHome()">
+        <ion-icon name="arrow-back-outline" ></ion-icon>
+        <ion-label>Back</ion-label>
+    </ion-button>
+   
     <ion-title class="ion-text-center">{{titleHeader }}</ion-title>
-    <ion-toolbar>
-        <ion-toggle slot="end" class="ion-padding" color="dark"></ion-toggle>
-    </ion-toolbar>
-</ion-header>
+</ion-toolbar>
+
+<!-- <ion-toolbar>
+
+    <ion-header [translucent]="true">
+        <ion-toolbar >
+            <ion-label slot="end">Theme Color</ion-label>
+            <ion-toggle slot="end" class="ion-padding" color="dark" (ionChange)="colorTheme($event)"></ion-toggle>
+        </ion-toolbar>
+    </ion-header>
+</ion-toolbar> -->
 
 <ion-content>
     <ion-header collapse="condense">
@@ -14,23 +26,31 @@
 
     <div class="ion-text-center">
         <ion-item>
-            <ion-label position="stacked">Insira a tarefa:</ion-label>
-            <ion-input></ion-input>
+            <ion-label position="stacked">
+                Enter the task:</ion-label>
+            <ion-input [(ngModel)]="data"></ion-input>
         </ion-item>
 
-        <ion-button class="sendTask ion-padding" color="dark" expand="block" fill="outline">
-            <strong>Enviar tarefa</strong>
+        <ion-button class="sendTask ion-padding" color="dark" expand="block" fill="outline" (click)="onSubmit()">
+            <strong>
+                Send the task</strong>
         </ion-button>
     </div>
 
-    <div class="ion-margin">
-
-        <ion-list>
-            <ion-item *ngFor="let item of listToDo">
-                <ion-label>{{item.description}}</ion-label>
-                <ion-checkbox slot="end" [(ngModel)]="listToDo.isChecked"></ion-checkbox>
+    <ion-list class="ion-margin" lines="full">
+        <ion-item-sliding  *ngFor="let item of items">
+            <ion-item-options side="start">
+                <ion-item-option color="warning" (click)="favorite(item)">Favorite</ion-item-option>
+            </ion-item-options>
+            
+            <ion-item >
+                {{ item }}
+                <!-- <ion-toggle slot="end" class="ion-padding" color="dark"></ion-toggle> -->
             </ion-item>
-        </ion-list>
-    </div>
-
+            
+            <ion-item-options side="end">
+                <ion-item-option color="danger" (click)="trashItem(item)">Trash</ion-item-option>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
 </ion-content>
