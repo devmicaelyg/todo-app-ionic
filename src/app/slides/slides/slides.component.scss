@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap');
+
+ion-content{
+  ion-header{
+    background: #0353cc;
+    height: 104px;
+    position: absolute;
+  }
+
+ion-slides {
+  height: 100%;
+
+ 
+  ion-slide{
+    flex-direction: column;
+    // ion-img{
+    //   margin-top: 192px;
+    // }
+
+    h3{
+      font-size: 19px;
+      font-family: 'Poppins', sans-serif;
+      width: 96%;
+    }
+
+    h2{
+      font-family: 'Poppins', sans-serif;
+    }
+  }
+
+}
+}
+// #0353cc
