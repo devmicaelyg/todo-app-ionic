@@ -9,10 +9,7 @@ import { FolderPage } from 'src/app/folder/folder.page';
 })
 export class HomeComponent implements OnInit {
 
-  slideOpts = {
-    initialSlide: 1,
-    speed: 400
-  };
+
 
   constructor(public modalController: ModalController) {
    }

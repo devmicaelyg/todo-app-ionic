@@ -1,0 +1,45 @@
+<ion-content>
+    <div class="ion-text-center">
+        <ion-toolbar>
+            <ion-title>Login</ion-title>
+        </ion-toolbar>
+
+
+        <ion-text class="ion-padding">Connect with your social media </ion-text>
+
+
+        <ion-toolbar>
+            <ion-button expand="block" shape="round" fill="outline" class="media-social">
+                <ion-icon name="logo-facebook" color="light"></ion-icon>
+                <ion-text class="ion-padding">Login with your Facebook</ion-text>
+            </ion-button>
+
+            <ion-button expand="block" shape="round">
+                <ion-icon name="logo-google"></ion-icon>
+                <ion-text class="ion-padding">Login with your Gmail</ion-text>
+            </ion-button>
+        </ion-toolbar>
+
+        <ion-text class="ion-padding">or connect with your credentials </ion-text>
+
+        <ion-toolbar>
+            <ion-item>
+                <ion-label position="floating">Username or email</ion-label>
+                <ion-input></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input></ion-input>
+            </ion-item>
+        </ion-toolbar>
+
+        <ion-toolbar>
+            <ion-button expand="block" shape="round" fill="outline" class="ion-margin buttonLogin" color="light" (click)="addCategory()">
+                <strong>Enter</strong>
+            </ion-button>
+        </ion-toolbar>
+
+        <ion-text class="ion-padding">Don't have acount? <a>Create here.</a> </ion-text>
+    </div>
+
+</ion-content>

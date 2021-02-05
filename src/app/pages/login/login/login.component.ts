@@ -1,19 +1,13 @@
-import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
 import { HomeComponent } from 'src/app/home/home/home.component';
-import { LoginComponent } from 'src/app/pages/login/login/login.component';
 
 @Component({
-  selector: 'app-slides',
-  templateUrl: './slides.component.html',
-  styleUrls: ['./slides.component.scss'],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
-export class SlidesComponent implements OnInit {
-
-  slideOpts = {
-    initialSlide: 0,
-    speed: 400
-  };
+export class LoginComponent implements OnInit {
 
   constructor(
     private modalController: ModalController
@@ -21,13 +15,13 @@ export class SlidesComponent implements OnInit {
 
   ngOnInit() {}
 
-  doLogin(){
+  addCategory(){
     this.presentModal();
   }
 
   async presentModal() {
     const modal = await this.modalController.create({
-      component: LoginComponent,
+      component: HomeComponent,
       cssClass: 'my-custom-class'
     });
     return await modal.present();
