@@ -1,16 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
-import { HomeComponent } from '../home/home/home.component';
-
+import { HomeComponent } from '../pages/home/home/home.component';
 @Component({
   selector: 'app-folder',
   templateUrl: './folder.page.html',
   styleUrls: ['./folder.page.scss'],
 })
 export class FolderPage implements OnInit {
+  // @Input() categoryName: string; 
+
   public folder: string;
   public titleHeader: string = "Tasks To Do"
+  items: Array<string> = [];
+  data;
+  route: string = 'home'
 
   constructor(
     private activatedRoute: ActivatedRoute, 
@@ -18,9 +22,6 @@ export class FolderPage implements OnInit {
     public modalController: ModalController,
     private router: Router) { }
 
-  items: Array<string> = [];
-  data;
-  route: string = 'home'
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
@@ -61,6 +62,10 @@ export class FolderPage implements OnInit {
 
   backHome(){
     this.presentModal();
+  }
+
+  favorite(item){
+
   }
 
 

@@ -1,21 +1,11 @@
 <ion-toolbar>
     <ion-button (click)="backHome()">
-        <ion-icon name="arrow-back-outline" ></ion-icon>
+        <ion-icon name="arrow-back-outline"></ion-icon>
         <ion-label>Back</ion-label>
     </ion-button>
-   
-    <ion-title class="ion-text-center">{{titleHeader }}</ion-title>
+
+    <ion-title class="ion-text-center">{{ titleHeader }}</ion-title>
 </ion-toolbar>
-
-<!-- <ion-toolbar>
-
-    <ion-header [translucent]="true">
-        <ion-toolbar >
-            <ion-label slot="end">Theme Color</ion-label>
-            <ion-toggle slot="end" class="ion-padding" color="dark" (ionChange)="colorTheme($event)"></ion-toggle>
-        </ion-toolbar>
-    </ion-header>
-</ion-toolbar> -->
 
 <ion-content>
     <ion-header collapse="condense">
@@ -38,16 +28,16 @@
     </div>
 
     <ion-list class="ion-margin" lines="full">
-        <ion-item-sliding  *ngFor="let item of items">
+        <ion-item-sliding *ngFor="let item of items">
             <ion-item-options side="start">
                 <ion-item-option color="warning" (click)="favorite(item)">Favorite</ion-item-option>
             </ion-item-options>
-            
-            <ion-item >
+
+            <ion-item>
                 {{ item }}
                 <!-- <ion-toggle slot="end" class="ion-padding" color="dark"></ion-toggle> -->
             </ion-item>
-            
+
             <ion-item-options side="end">
                 <ion-item-option color="danger" (click)="trashItem(item)">Trash</ion-item-option>
             </ion-item-options>

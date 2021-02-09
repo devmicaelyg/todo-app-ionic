@@ -1,7 +1,6 @@
 import { ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
-import { HomeComponent } from 'src/app/home/home/home.component';
-
+import { HomeComponent } from '../../home/home/home.component';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

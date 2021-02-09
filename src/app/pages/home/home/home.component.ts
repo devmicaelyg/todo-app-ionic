@@ -9,16 +9,37 @@ import { FolderPage } from 'src/app/folder/folder.page';
 })
 export class HomeComponent implements OnInit {
 
-
+  categoryItem: string; 
+  showFormCategory: boolean = false; 
+  takeFormCategory: boolean = true; 
+  items: Array<string> = [];
 
   constructor(public modalController: ModalController) {
    }
 
   ngOnInit() {}
 
-  addCategory(){
+  addTasks(){
     this.presentModal();
   }
+
+  addCategory(){
+    this.items.push(this.categoryItem);
+    this.categoryItem = '';
+  }
+
+  openFormCategory(){
+    this.showFormCategory = true; 
+  }
+
+  closeFormCategory(){
+    this.showFormCategory = false;  
+  }
+
+  trashItem(item) {
+    this.items.splice(this.items.indexOf(item), 1)
+  }
+  
 
   async presentModal() {
     const modal = await this.modalController.create({

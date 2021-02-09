@@ -1,0 +1,55 @@
+<ion-toolbar>
+    <ion-header [translucent]="true">
+        <ion-title>Welcome</ion-title>
+        <ion-toggle class="ion-padding" color="dark" (ionChange)="colorTheme($event)"></ion-toggle>
+    </ion-header>
+</ion-toolbar>
+
+<ion-text color="medium" class="ion-text-center ion-padding">
+    Your tasks category
+</ion-text>
+
+
+<ion-content>
+    <div class="category-list">
+
+        <ion-list class="ion-margin" lines="full">
+            <ion-item-sliding *ngFor="let item of items">
+                <ion-item-options side="start">
+                    <!-- <ion-item-option color="warning" (click)="favorite(item)">Favorite</ion-item-option> -->
+                </ion-item-options>
+
+                <ion-item (click)="addTasks()" detail>
+                    {{ item }}
+                </ion-item>
+
+                <ion-item-options side="end">
+                    <ion-item-option color="danger" (click)="trashItem(item)">Trash</ion-item-option>
+                </ion-item-options>
+            </ion-item-sliding>
+        </ion-list>
+
+    </div>
+
+    <ion-button class="sendTask ion-padding" color="dark" expand="block" fill="outline" (click)="openFormCategory()">
+        <strong>Add category</strong>
+    </ion-button>
+
+    <div class="ion-text-center ion-padding" *ngIf="showFormCategory">
+        <ion-item>
+            <ion-label position="stacked">
+                Enter the category:</ion-label>
+            <ion-input [(ngModel)]="categoryItem"></ion-input>
+        </ion-item>
+        <div>
+            <ion-button class="sendTask ion-padding" color="dark" expand="block" fill="outline" (click)="addCategory()">
+                <strong>
+            Send the category</strong>
+            </ion-button>
+            <ion-button class="sendTask ion-padding" color="dark" expand="block" fill="outline" (click)="closeFormCategory()">
+                <strong>
+            Close form category</strong>
+            </ion-button>
+        </div>
+    </div>
+</ion-content>

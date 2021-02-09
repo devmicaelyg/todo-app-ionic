@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { HomeComponent } from 'src/app/home/home/home.component';
 import { LoginComponent } from 'src/app/pages/login/login/login.component';
 
 @Component({
