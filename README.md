@@ -31,6 +31,10 @@ Caso o projeto não abra sozinho no seu browser, a porta padrão usada pelo ioni
 
 A partir desse momento você consegue explorar o app, :)
 
+### Lembre-se 
+
+O ionic é um framework multiplataforma. Esse projeto foi feito com a intenção de funcionar no modo mobile e para você ver o resultado dessa forma, é necessário que você no seu navegador coloque no modo desenvolvedor, que pode ser feito ao pressionar a tecla F12 do seu teclado, e na aba "Responsividade" escolher um modelo de celular. 
+
 ![image](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![image](https://img.shields.io/badge/AngularJS-E23237?style=for-the-badge&logo=angularjs&logoColor=white)
 ![image](https://img.shields.io/badge/{Ionic}-3880FF?style=for-the-badge&logo=ionic&logoColor=white)
